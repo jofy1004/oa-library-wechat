@@ -1,0 +1,9 @@
+<div class="weui-cells">
+  <div class="weui-cell weui-cell_access" *ngFor="let book of books" routerLink="/detail/{{book._id}}">
+    <div class="weui-cell__bd">
+      <span style="vertical-align: middle">{{book.title}}</span>
+    </div>
+    <div class="weui-cell__ft">详细信息</div>
+  </div>
+</div>
+

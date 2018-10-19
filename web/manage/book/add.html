@@ -1,0 +1,54 @@
+<div class="weui-cells weui-cells_form">
+  <div class="weui-cell">
+    <div class="weui-cell__hd"><label class="weui-label">书名</label></div>
+    <div class="weui-cell__bd">
+      <input class="weui-input" [(ngModel)]="book.title" type="text" placeholder="请输入书名">
+    </div>
+  </div>
+  <div class="weui-cell weui-cell_select weui-cell_select-after">
+    <div class="weui-cell__hd">
+      <label class="weui-label">类别</label>
+    </div>
+    <div class="weui-cell__bd">
+      <select class="weui-select" [(ngModel)]="book.categoryId">
+        <option value="" selected>—请选择—</option>
+        <option *ngFor="let category of categoryList" selected="category._id == book.categoryId" [value]="category._id">
+          {{category.categoryName}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="weui-cell">
+    <div class="weui-cell__hd"><label class="weui-label">简介</label></div>
+    <div class="weui-cell__bd">
+      <textarea class="weui-textarea" [(ngModel)]="book.description" rows="5" cols="23" placeholder="请输入简介"></textarea>
+    </div>
+  </div>
+  <div class="weui-cell">
+    <div class="weui-cell__hd"><label class="weui-label">封面</label></div>
+    <div class="weui-cell__bd">
+      <ul class="weui-uploader__files" *ngIf="book.coverURL">
+        <li class="weui-uploader__file">
+          <img src="/covers/{{book.coverURL}}" style="height: 100%">
+        </li>
+      </ul>
+      <div class="weui-uploader__input-box">
+        <input type="file" class="weui-uploader__input" ng2FileSelect [uploader]="uploader"
+               (change)="selectedFileOnChanged($event)">
+      </div>
+    </div>
+  </div>
+  <div class="weui-cell">
+    <div class="button-sp-area" style="width: 100%">
+      <a class="weui-btn weui-btn_plain-primary" (click)="saveBook()">保 存</a>
+    </div>
+
+  </div>
+</div>
+<div style="opacity: 1;" *ngIf="success">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+    <p class="weui-toast__content">已完成</p>
+  </div>
+</div>

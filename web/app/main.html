@@ -1,0 +1,31 @@
+<div class="page tabbar js_show">
+  <div class="page__bd" style="height: 100%;">
+    <div class="weui-tab">
+      <div class="weui-tab__panel">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="weui-tabbar">
+        <a class="weui-tabbar__item " (click)="active=0" [ngClass]="{'weui-bar__item_on':active == 0}" routerLink="/_i">
+          <div class="weui-grid__icon"
+               [ngClass]="{'icon-category12': active != 0, 'icon-category11':active == 0}">
+          </div>
+          <p class="weui-tabbar__label">分 类</p>
+        </a>
+        <a class="weui-tabbar__item " (click)="active=1" [ngClass]="{'weui-bar__item_on':active == 1}"
+           routerLink="/borrowed">
+          <div class="weui-grid__icon"
+               [ngClass]="{'icon-category22': active != 1, 'icon-category21':active == 1}">
+          </div>
+          <p class="weui-tabbar__label">已借阅</p>
+        </a>
+        <a class="weui-tabbar__item " (click)="active=2" [ngClass]="{'weui-bar__item_on':active == 2}"
+           routerLink="/history">
+          <div class="weui-grid__icon"
+               [ngClass]="{'icon-category32': active != 2, 'icon-category31':active == 2}">
+          </div>
+          <p class="weui-tabbar__label">记 录</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

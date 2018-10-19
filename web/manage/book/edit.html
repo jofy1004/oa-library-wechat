@@ -1,0 +1,28 @@
+<div class="weui-search-bar" [ngClass]="{'weui-search-bar_focusing':param.searchFlag}">
+  <div class="weui-search-bar__form" (click)="searchBarClick()">
+    <div class="weui-search-bar__box" >
+      <i class="weui-icon-search"></i>
+      <input type="search" id="iptSearch" class="weui-search-bar__input" placeholder="搜索" [(ngModel)]="param.query"
+             (keyup.enter)="queryBooks(param.query)">
+      <a href="javascript:" class="weui-icon-clear"></a>
+    </div>
+    <label class="weui-search-bar__label" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+      <i class="weui-icon-search"></i>
+      <span>搜索</span>
+    </label>
+  </div>
+  <a class="weui-search-bar__cancel-btn" (click)="cancelFilter()">取 消</a>
+</div>
+
+<div class="weui-cells">
+  <div class="weui-cell weui-cell_access" *ngFor="let book of books" routerLink="/manage/{{book._id}}" >
+    <div class="weui-cell__bd">
+      <span style="vertical-align: middle">{{book.title}}</span>
+    </div>
+
+    <div class="weui-cell__ft">详细信息</div>
+    <div class="" (click)="removeBook(book._id)">
+      <a class="weui-btn weui-btn_plain-primary">删 除</a>
+    </div>
+  </div>
+</div>

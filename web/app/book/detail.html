@@ -1,0 +1,40 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">{{book.categoryId.categoryName}}</label>
+      <span class="weui-form-preview__value">{{book.title}}</span>
+    </div>
+  </div>
+  <div class="weui-form-preview__bd">
+    <div style="text-align: center">
+      <img src="/covers/{{book.coverURL}}" style="width: 200px">
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">简介</label>
+      <span class="weui-form-preview__value">{{book.description}}</span>
+    </div>
+    <div class="weui-form-preview__item" *ngIf="book.borrower">
+      <label class="weui-form-preview__label">借阅人</label>
+      <span class="weui-form-preview__value">{{book.borrower}}</span>
+    </div>
+    <div class="weui-form-preview__item" *ngIf="book.borrowDate">
+      <label class="weui-form-preview__label">借阅时间</label>
+      <span class="weui-form-preview__value">{{book.borrowDate | date:'yyyy-MM-dd'}}</span>
+    </div>
+  </div>
+  <div class="weui-form-preview__ft">
+    <a class="weui-form-preview__btn weui-form-preview__btn_primary" *ngIf="displayFlag"
+       (click)="borrowBook(book._id)">借 阅</a>
+  </div>
+</div>
+
+<!--
+<div style="opacity: 1;" *ngIf="notAllow">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-info-circle weui-icon_toast"></i>
+    <br>
+    <p class="weui-toast__content">请先还掉借阅书籍方可再借阅</p>
+  </div>
+</div>
+-->

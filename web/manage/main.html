@@ -1,0 +1,36 @@
+<div class="page tabbar js_show">
+  <div class="page__bd" style="height: 100%;">
+    <div class="weui-tab">
+      <div class="weui-tab__panel">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="weui-tabbar">
+        <a class="weui-tabbar__item " (click)="active=0" [ngClass]="{'weui-bar__item_on':active == 0}" routerLink="/manage/manage.html">
+          <div class="weui-grid__icon" [ngClass]="{'icon-file-empty': active != 0, 'icon-files-empty':active == 0}">
+          </div>
+          <p class="weui-tabbar__label">新 增</p>
+        </a>
+        <a class="weui-tabbar__item " (click)="active=1" [ngClass]="{'weui-bar__item_on':active == 1}"
+           routerLink="/edit">
+          <div class="weui-grid__icon"
+               [ngClass]="{'icon-cog': active != 1, 'icon-cogs':active == 1}">
+          </div>
+          <p class="weui-tabbar__label">编 辑</p>
+        </a>
+
+        <a class="weui-tabbar__item " (click)="active=2" [ngClass]="{'weui-bar__item_on':active == 2}" routerLink="/addCategory">
+          <div class="weui-grid__icon" [ngClass]="{'icon-file-empty': active != 2, 'icon-files-empty':active == 2}">
+          </div>
+          <p class="weui-tabbar__label">类别管理</p>
+        </a>
+        <a class="weui-tabbar__item " (click)="active=3" [ngClass]="{'weui-bar__item_on':active == 3}"
+           routerLink="/borrowedList">
+          <div class="weui-grid__icon"
+               [ngClass]="{'icon-menu02': active != 3, 'icon-menu03':active == 3}">
+          </div>
+          <p class="weui-tabbar__label">借阅列表</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

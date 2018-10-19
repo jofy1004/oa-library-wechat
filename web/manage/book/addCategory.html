@@ -1,0 +1,108 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <label class="weui-form-preview__label">新增类别</label>
+    <em class="weui-form-preview__value">&nbsp;</em>
+  </div>
+  <div class="weui-form-preview__bd">
+    <label class="weui-form-preview__label">类别</label>
+    <span class="weui-form-preview__value">
+      <input class="weui-input" [(ngModel)]="category.newCategoryName" type="text" placeholder="请输入类别名">
+    </span>
+  </div>
+  <div class="weui-form-preview__ft">
+    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" (click)="addCategory()">新增
+    </button>
+  </div>
+</div>
+<br>
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <label class="weui-form-preview__label">修改类别</label>
+    <em class="weui-form-preview__value">&nbsp;</em>
+  </div>
+
+    <div class="weui-cell weui-cell_select weui-cell_select-after">
+      <div class="weui-cell__hd">
+        <label class="weui-form-preview__label" style="font-size:0.9em ">原类别</label>
+      </div>
+      <div class="weui-cell__bd">
+        <select class="weui-select" [(ngModel)]="category._id">
+          <option value="" selected>—请选择—</option>
+          <option *ngFor="let ct of categoryList"  [value]="ct._id">
+            {{ct.categoryName}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+  <div class="weui-form-preview__bd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">新类别</label>
+      <span class="weui-form-preview__value">
+        <input class="weui-input" [(ngModel)]="category.editCategoryName" type="text" placeholder="请输入类别名">
+      </span>
+    </div>
+  </div>
+
+  <div class="weui-form-preview__ft">
+    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" (click)="editCategory()">修改
+    </button>
+  </div>
+</div>
+<br>
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <label class="weui-form-preview__label">删除类别</label>
+    <em class="weui-form-preview__value">&nbsp;</em>
+  </div>
+  <div class="weui-cell weui-cell_select weui-cell_select-after">
+    <div class="weui-cell__hd">
+      <label class="weui-form-preview__label" style="font-size:0.9em ">类别</label>
+    </div>
+    <div class="weui-cell__bd">
+      <select class="weui-select" [(ngModel)]="delCategory._id">
+        <option value="" selected>—请选择—</option>
+        <option *ngFor="let ct of categoryList" [value]="ct._id">
+          {{ct.categoryName}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="weui-form-preview__ft">
+    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" (click)="deleteCategory()">删除
+    </button>
+  </div>
+</div>
+
+<div style="opacity: 1;" *ngIf="success">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+    <p class="weui-toast__content">已完成</p>
+  </div>
+</div>
+<div style="opacity: 1;" *ngIf="exists">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-info-circle weui-icon_toast"></i>
+    <br>
+    <p class="weui-toast__content">类别已存在</p>
+  </div>
+</div>
+<div style="opacity: 1;" *ngIf="msg">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-info-circle weui-icon_toast"></i>
+    <br>
+    <p class="weui-toast__content">类别不能为空！</p>
+  </div>
+</div>
+
+<div style="opacity: 1;" *ngIf="existsCategoryFlag">
+  <div class="weui-mask_transparent"></div>
+  <div class="weui-toast">
+    <i class="weui-icon-info-circle weui-icon_toast"></i>
+    <br>
+    <p class="weui-toast__content">删除失败，类别下存在书籍！</p>
+  </div>
+</div>

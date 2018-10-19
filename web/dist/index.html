@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>图书馆</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="node_modules/weui/dist/style/weui.min.css">
+  <link rel="stylesheet" href="app/css/main.css">
+  <base href="/main">
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+</head>
+
+<body>
+<main-app>
+  <div class="page tabbar js_show">
+    <div class="page__bd" style="height: 100%;">
+      <div class="weui-tab">
+        <div class="weui-tab__panel">
+          <section>
+            <p>
+              <img src="app/css/images/cover_1.png" style="width: 100%">
+            </p>
+          </section>
+          <div class="weui-msg__extra-area">
+            <div class="weui-footer">
+              <p class="weui-footer__text">Copyright &copy; 2012-2017 CCCIS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main-app>
+<script src="dist/app.js"></script>
+</body>
+</html>

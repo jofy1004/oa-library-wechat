@@ -1,0 +1,25 @@
+<div class="" *ngFor="let book of borrowedListBooks">
+  <div class="weui-form-preview">
+    <div class="weui-form-preview__hd">
+      <label class="weui-form-preview__label">{{book.title}}</label>
+      <span class="weui-form-preview__value">&nbsp;</span>
+    </div>
+    <div class="weui-form-preview__bd">
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label">借阅人</label>
+        <span class="weui-form-preview__value">{{book.borrower}}</span>
+      </div>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label">借阅时间</label>
+        <span class="weui-form-preview__value">{{book.borrowDate | date:'yyyy-MM-dd'}}</span>
+      </div>
+    </div>
+    <div class="weui-form-preview__ft">
+      <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" (click)="managerReturnBook(book._id)">还书
+      </button>
+    </div>
+  </div>
+  <br>
+</div>
+
+

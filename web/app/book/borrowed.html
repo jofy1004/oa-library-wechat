@@ -1,0 +1,11 @@
+<div class="weui-cells">
+  <div class="weui-cell" *ngFor="let book of borrowedBooks">
+    <div class="weui-cell__bd">
+      <p>{{book.title}}</p>
+    </div>
+    <div class="weui-cell__ft" (click)="returnBook(book._id)">
+      <a class="weui-btn weui-btn_plain-primary">归 还</a>
+    </div>
+  </div>
+</div>
+

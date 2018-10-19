@@ -1,0 +1,35 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"></label>
+      <span class="weui-form-preview__value">我的记录</span>
+    </div>
+  </div>
+  <div class="weui-form-preview__bd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">历年借阅</label>
+      <span class="weui-form-preview__value">{{history.last || 0}}册</span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">当年借阅</label>
+      <span class="weui-form-preview__value">{{history.current ||  0}}册</span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">当年第一本书</label>
+      <span class="weui-form-preview__value">{{history.firstBookTitle || '无'}}</span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">当年第一本书日期</label>
+      <span class="weui-form-preview__value">{{history.firstBookBorrowDate | date:'yyyy-MM-dd'}}</span>
+    </div>
+    <!--<div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">借阅最多的类别</label>
+      <span class="weui-form-preview__value">{{history.category || '无'}}</span>
+    </div>-->
+  </div>
+  <div class="weui-form-preview__ft">
+    <h1>
+      {{history.appraise}}
+    </h1>
+  </div>
+</div>
